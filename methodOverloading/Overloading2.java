@@ -1,28 +1,25 @@
 /**
- * 
- *  Method Overloading by changing the data type of parameters
- * 
- * */ 
+ * Method Overloading by changing the data type of parameters
+ */
+class Multiply {
 
-
-class  Multiply {
-    int a,b;
-    String str;
-
-    Multiply(int a, int b){
+    // Method with two int parameters
+    void product(int a, int b) {
         int prod = a * b;
-            System.out.println(prod);
+        System.out.println("Product of two integers: " + prod);
     }
 
-    Multiply(String str){
-        String A = str;
-            System.out.println(A);
+    // Method with one String parameter
+    void product(String str) {
+        System.out.println("String is: " + str);
     }
-    
 }
+
 class Overloading2 {
     public static void main(String[] args) {
-        Multiply Mul = new Multiply("yash");
-        Multiply Mul1 = new Multiply(5, 6);
+        Multiply mul = new Multiply();
+
+        mul.product("Yash");     // Calls product(String)
+        mul.product(5, 6);       // Calls product(int, int)
     }
 }

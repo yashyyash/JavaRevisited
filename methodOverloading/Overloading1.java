@@ -1,31 +1,35 @@
 /**
- * 
  * Overloading by changing the number of parameters
- * 
- * */ 
+ */
 class Add {
-    public int a,b;
-    public float c,d;
-    
-    Add(int a){
-        int sum = a+a;
-        System.out.println(sum);
-    }
-    Add(int a, int b){
-        int sum = a+b;
-        System.out.println(sum);
-    }
-    Add(float c, float d){
-        float sum = c+d;
+    public int a, b;
+    public float c, d;
 
-        System.out.println(sum);
+    // Method with one int parameter
+    void sum(int a) {
+        int result = a + a;
+        System.out.println("Sum of one int: " + result);
     }
 
+    // Method with two int parameters
+    void sum(int a, int b) {
+        int result = a + b;
+        System.out.println("Sum of two ints: " + result);
+    }
+
+    // Method with two float parameters
+    void sum(float c, float d) {
+        float result = c + d;
+        System.out.println("Sum of two floats: " + result);
+    }
 }
+
 class AdditionOverloadingMethod {
     public static void main(String[] args) {
-        Add add1 = new  Add(1);
-        Add add2 = new  Add(1,2);
-        Add add3 = new  Add(1.2f, 2.4f);
-    }    
+        Add obj = new Add();
+        
+        obj.sum(1);             // Calls sum(int)
+        obj.sum(1, 2);          // Calls sum(int, int)
+        obj.sum(1.2f, 2.4f);    // Calls sum(float, float)
+    }
 }
